@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Дасгал ажил</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+        }
+
+        .container {
+            min-height: 100vh;
+            background: #1b1b1b;
+            color: #fff;
+        }
+
+        .header {
+            padding: 15px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            border-bottom: 3px solid #00ff99;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            padding: 10px 20px;
+        }
+
+        .tab {
+            background: #2fa8ff;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .tab:hover {
+            background: #1e8fe0;
+        }
+
+        .content {
+            display: flex;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        .profile {
+            width: 220px;
+            background: #eaeaea;
+            color: #000;
+            padding: 10px;
+        }
+
+        .profile-img {
+            height: 150px;
+            background: #888;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .profile p {
+            border-bottom: 1px solid #ccc;
+            padding: 1px 100;
+        }
+
+        .right {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .main {
+            background: #ffffff;
+            text-align: center;
+            color: #000;
+            min-height: 280px;
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .address {
+            background: #f4a6b5;
+            color: #000;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">ДАСГАЛ АЖИЛ</div>
+
+    <div class="tabs">
+        <div class="tab" onclick="showHome()">Нүүр хуудас</div>
+        <div class="tab" onclick="showImages()">Зураг</div>
+        <div class="tab" onclick="showVideos()">Бичлэг</div>
+        <div class="tab" onclick="showMap()">Газрын зураг</div>
+    </div>
+
+    <div class="content">
+
+        <div class="profile">
+            <img src="zurag.jpg">
+            <p>Нэр: Мэндбаяр</p>
+            <p>Нас: 19</p>
+            <p>Мэргэжил: IT</p>
+            <p>Утас: 9969-4667</p>
+        </div>
+
+        <div class="left">
+            <div id="mainContent" class="main">
+            <p> ------------------------------------------------------------</p>  
+            <p> ------------------------------------------------------------</p>  
+            <p> ------------------------------------------------------------</p>  
+            <p> ------------------------------------------------------------</p>  
+            <p> За тэгээд аялаад байж дээ.</p>  
+            <p> ------------------------------------------------------------</p>  
+            <p> ------------------------------------------------------------</p>  
+            <p> ------------------------------------------------------------</p> 
+            <p> ------------------------------------------------------------</p> 
+            
+            <div class="address">
+                Улаанбаатар хот, БЗД 29-р хороо сэлбэ 25-641 тоот
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function showHome() {
+        document.getElementById("mainContent").innerHTML = `
+            <h2>Нүүр хуудас</h2>
+            <p>Сайн байна уу! Энэ бол миний <strong>ДАСГАЛ АЖИЛ</strong> даалгавар танилцуулга.</p> <p>Энэхүү даалгавар нь гэрт эзэмшсэн мэдлэг, ур чадварыг нэгтгэн харуулах зорилготой.</p> <p>Та дараах хэсгүүдээр орж үзэх боломжтой:</p> <ul> <li><strong>Зураг</strong></li> <li><strong>Бичлэгнүүд</strong> </li> <li><strong>Газрын зураг</strong> </li> </ul> <p>Энэ нүүр хуудас нь миний мэдээлэл болон зорилгыг танилцуулж байна.</p>
+        `;
+    }
+
+    function showImages() {
+        document.getElementById("mainContent").innerHTML = `
+            <h2>Зурганууд</h2>
+            <img src="zurg.jpg" width="100%" height="320">
+        `;
+    }
+
+    function showVideos() {
+        document.getElementById("mainContent").innerHTML = `
+            <h2>Бичлэгүүд</h2>
+            <video width="500" 
+            height="380" controls>
+                <source src="ariuk.mp4"
+                type="video/mp4">
+
+        `;
+    }
+
+    function showMap() {
+        document.getElementById("mainContent").innerHTML = `
+            <h2>Газрын зураг</h2>
+            <iframe
+                src="https://maps.google.com/maps?q=ulaanbaatar&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="500"
+                height="400"
+                length="100%"
+                frameborder="0">
+            </iframe>
+        `;
+    }
+</script>
+
+</body>
+</html>
